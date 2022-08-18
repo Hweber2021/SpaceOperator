@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/history_nav_graph"
+    app:startDestination="@id/menuFragment">
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.cci.spaceoperators.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_newGameFragment"
+            app:destination="@id/newGameFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_joinNewGameFragment"
+            app:destination="@id/joinNewGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.cci.spaceoperators.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newGameFragment"
+        android:name="com.cci.spaceoperators.game.NewGameFragment"
+        android:label="NewGameFragment" >
+        <action
+            android:id="@+id/action_newGameFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_newGameFragment_to_spaceShipOneFragment"
+            app:destination="@id/spaceShipOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinNewGameFragment"
+        android:name="com.cci.spaceoperators.game.JoinNewGameFragment"
+        android:label="JoinNewGameFragment" >
+        <action
+            android:id="@+id/action_joinNewGameFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_joinNewGameFragment_to_spaceShipOneFragment"
+            app:destination="@id/spaceShipOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spaceShipOneFragment"
+        android:name="com.cci.spaceoperators.spaceship.SpaceShipOneFragment"
+        android:label="SpaceShipOneFragment" >
+        <action
+            android:id="@+id/action_spaceShipOneFragment_to_spaceshipTwoFragment"
+            app:destination="@id/spaceshipTwoFragment" />
+        <action
+            android:id="@+id/action_spaceShipOneFragment_to_spaceshipThreeFragment"
+            app:destination="@id/spaceshipThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spaceshipTwoFragment"
+        android:name="com.cci.spaceoperators.SpaceshipTwoFragment"
+        android:label="fragment_spaceship_two"
+        tools:layout="@layout/fragment_spaceship_two" >
+        <action
+            android:id="@+id/action_spaceshipTwoFragment_to_spaceShipOneFragment"
+            app:destination="@id/spaceShipOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spaceshipThreeFragment"
+        android:name="com.cci.spaceoperators.spaceship.SpaceshipThreeFragment"
+        android:label="SpaceshipThreeFragment" >
+        <action
+            android:id="@+id/action_spaceshipThreeFragment_to_spaceShipOneFragment"
+            app:destination="@id/spaceShipOneFragment" />
+    </fragment>
+</navigation>

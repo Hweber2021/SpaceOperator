@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3B4BA6"
+    tools:context=".SpaceshipTwoFragment" >
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/GameMaster2"
+        android:name="com.cci.spaceoperators.spaceship.GameMasterFragment"
+        android:layout_width="0dp"
+        android:layout_height="374dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714"
+        tools:layout="@layout/fragment_game_master" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="359dp"
+        android:background="#E4E4E4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnNavMainLeft"
+            android:layout_width="149dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/space_mono"
+            android:text="@string/droite"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Switch
+            android:id="@+id/switchOne"
+            android:layout_width="68dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/space_mono"
+            android:minHeight="48dp"
+            android:text="1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="68dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/space_mono"
+            android:minHeight="48dp"
+            android:text="2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchOne" />
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="68dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/space_mono"
+            android:text="3"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+        <Button
+            android:id="@+id/btnLightSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="56dp"
+            android:backgroundTint="#EF1616"
+            android:fontFamily="@font/space_mono"
+            android:text="TURBO"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnNavMainLeft"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

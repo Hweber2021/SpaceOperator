@@ -1,0 +1,55 @@
+package com.cci.spaceoperators
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.cci.spaceoperators.databinding.FragmentHistoryBinding
+import com.cci.spaceoperators.users.UserViewModel
+
+class HistoryFragment: Fragment() {
+
+    private var _binding: FragmentHistoryBinding? = null
+    private lateinit var binding: FragmentHistoryBinding
+
+    private val userViewModel: UserViewModel by activityViewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        binding = _binding!!
+
+        return _binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        userViewModel.getUsername(
+            binding.textUsername.text.toString()
+        )
+
+        userViewModel.getnbTourUser(
+            binding.textNbTour.text.toString()
+        )
+
+        binding.goBackButton.setOnClickListener {
+            val action = HistoryFragmentDirections.actionHistoryFragmentToMenuFragment()
+
+            findNavController().navigate(action)
+        }
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
+    }
+
+}
