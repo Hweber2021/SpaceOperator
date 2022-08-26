@@ -1,5 +1,6 @@
 package com.cci.spaceoperators.game
 
+import com.cci.spaceoperators.network.PayloadGameStart
 import com.cci.spaceoperators.utils.SpaceOperatorsMoshi.moshi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -14,9 +15,13 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_PATH)
     .build()
 
+private val moshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .build()
+
 interface BoredApiService {
     @GET("activity")
-    suspend fun getActivity(): BoredActivity
+    suspend fun getActivityGameStart(): PayloadGameStart
 }
 
 object BoredApi {

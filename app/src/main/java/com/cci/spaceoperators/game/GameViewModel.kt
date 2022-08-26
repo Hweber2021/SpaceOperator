@@ -4,8 +4,10 @@ import android.app.Application
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
+import com.cci.spaceoperators.users.User
 import com.cci.spaceoperators.utils.SocketViewModel
 import com.cci.spaceoperators.utils.SpaceOperatorDatabase
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +15,7 @@ import kotlinx.coroutines.launch
 import java.net.Inet4Address
 import java.net.NetworkInterface
 
-class NewGameViewModel(application: Application): AndroidViewModel(application) {
+class GameViewModel(application: Application): AndroidViewModel(application) {
 
     val boredApiService = BoredApi.retrofitService
 
@@ -24,6 +26,8 @@ class NewGameViewModel(application: Application): AndroidViewModel(application) 
     ).build()
 
     val usersDao = db.usersDao()
+
+    val currentUser = MutableLiveData<User>(null)
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -42,9 +46,9 @@ class NewGameViewModel(application: Application): AndroidViewModel(application) 
         }
     }
 
-    fun getPlayerStatus()
+    fun observePlayerStatus(username: String)
     {
-
+        usersDao.getStatusByUsername(username)
     }
 
 

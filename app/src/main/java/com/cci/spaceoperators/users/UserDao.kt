@@ -22,6 +22,9 @@ interface UserDao {
     @Query("SELECT username FROM users where user_id =:userId")
     fun getUsername(userId: String): String
 
+    @Query("SELECT status FROM users where username =:username")
+    fun getStatusByUsername(username: String): Boolean
+
     @Query("""
     SELECT * 
     FROM 

@@ -56,12 +56,5 @@ class MainActivity : AppCompatActivity() {
             )
     }
 
-    fun openJoinNewGameDialog()
-    {
-        JoinGameDialogFragment().show(
-            supportFragmentManager,
-            "join-game-dialog"
-        )
-    }
 
 }

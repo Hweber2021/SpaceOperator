@@ -29,16 +29,6 @@ class SocketViewModel(application: Application) : AndroidViewModel(application) 
                ?.hostAddress ?: "127.0.0.1"
 
            ipAddress.postValue(ip)
-
-           // Sert pour voir la liste des interfaces réseau et de leurs adresses IP :
-//          ipAddress.postValue(
-//              networkInterfaces.toList().fold("") { acc, ni ->
-//                ni.inetAddresses.toList().fold(acc) { acc2, add ->
-//                  "$acc2\n${ni.displayName} : ${add.hostAddress}"
-//                }
-//              }
-//             )
-//             ipAddress.postValue(InetAddress.getLocalHost().hostAddress)
         }
     }
 
