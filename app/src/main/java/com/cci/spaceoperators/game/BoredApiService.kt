@@ -37,10 +37,11 @@ interface BoredApiService {
     @GET("PayloadGameStart/PayloadGameFinish")
     suspend fun getGameFinish(): PayloadGameFinish
 
+    @POST("PayloadGameStart/PayloadUpdateIntegrity")
+    suspend fun postIntegrity(): PayloadUpdateIntegrity
+
     @POST("PayloadGameStart/PayloadGameShipDestroyed")
     suspend fun postGameShipDestroyed(): PayloadGameShipDestroyed
-
-
 
 }
 
