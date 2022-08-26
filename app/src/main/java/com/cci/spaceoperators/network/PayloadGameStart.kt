@@ -1,6 +1,7 @@
 package com.cci.spaceoperators.network
 
 import com.cci.spaceoperators.game.Game
+import com.cci.spaceoperators.users.User
 import com.squareup.moshi.Json
 
 data class PayloadGameStart(
@@ -22,7 +23,7 @@ data class PayloadUpdateIntegrity(
 
 data class PayloadGameFinish(
     val type: String = PayloadType.finish.toString(),
-    val data: Game
+    val data: User
 ) : Payload() {
     fun jsonEncodeToString(): String {
         return super.jsonEncodeToString(this)

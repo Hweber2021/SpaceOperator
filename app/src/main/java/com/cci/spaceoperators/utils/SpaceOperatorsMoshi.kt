@@ -6,6 +6,5 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 object SpaceOperatorsMoshi {
     val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
-        .add(RoomDateConverter())
         .build()
 }

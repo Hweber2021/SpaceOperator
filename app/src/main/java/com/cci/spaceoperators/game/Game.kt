@@ -22,6 +22,5 @@ data class Game(
     val turn: Int = 0,
 
     @ColumnInfo(name = "integrity")
-    @Json
     val integrity: Float
 )
